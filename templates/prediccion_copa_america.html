@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css')}}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <title>Predicción Copa América 2021</title>
+</head>
+<body>
+    <header>
+        <h1>Predicción Copa América 2021</h1>
+    </header>
+
+    <a class="btn btn-danger my-4 mx-5" href="{{ url_for('inicio')}}">Volver</a>
+
+    <main class="container">
+
+        <!-- FASE DE GRUPOS -->
+        <section class="row">
+            <!-- GRUPO A -->
+            <div class="col-sm-6 mb-3">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h5>Resultados Grupo A</h5>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        {% for r in resultados_grupo_a %}
+                            <li class="list-group-item">{{ r }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <!-- GRUPO B -->
+            <div class="col-sm-6 mb-3">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h5>Resultados Grupo B</h5>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        {% for r in resultados_grupo_b %}
+                            <li class="list-group-item">{{ r }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- FASE FINAL -->
+        <section class="row mb-5">
+            <!-- CUARTOS DE FINAL -->
+            <div class="col-12 mb-3 text-center">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Resultados Cuartos de Final</h5>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        {% for r in resultados_cuartos %}
+                            <li class="list-group-item">{{ r }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <!-- SEMI FINAL -->
+            <div class="col-12 mb-3 text-center">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Resultados Semi Final</h5>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        {% for r in resultados_semi %}
+                            <li class="list-group-item">{{ r }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <!-- FINAL -->
+            <div class="col-12 mb-3 text-center">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Resultado Final</h5>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        {% for r in resultados_final %}
+                            <li class="list-group-item">🏆{{ r }}🏆</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+</body>
+</html>

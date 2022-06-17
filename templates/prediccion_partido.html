@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css')}}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <title>Predicción Copa América 2021</title>
+</head>
+<body>
+    <header>
+        <h1>Predicción Copa América 2021</h1>
+    </header>
+
+    <a class="btn btn-danger my-4 mx-5" href="{{ url_for('inicio')}}">Volver</a>
+
+    <main class="container">
+        <section class="row mb-5">
+            <div class="col-12 mb-3 text-center">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Partido Personalizado</h5>
+                    </div>
+                    <div class="card-body my-5">
+                        <form action="{{ url_for('prediccion_partido') }}" method="POST">
+                            <select name="local" id="local" required>
+                                <option value="">Local</option>
+                                <option value="Brazil">Brazil</option> 
+                                <option value="Peru">Perú</option> 
+                                <option value="Colombia">Colombia</option>
+                                <option value="Venezuela">Venezuela</option> 
+                                <option value="Ecuador">Ecuador</option> 
+                                <option value="Argentina">Argentina</option>
+                                <option value="Chile">Chile</option>
+                                <option value="Uruguay">Uruguay</option>
+                                <option value="Paraguay">Paraguay</option>
+                                <option value="Bolivia">Bolivia</option>
+                            </select>
+                             vs 
+                            <select name="visita" id="visita" required>
+                                <option value="">Visita</option>
+                                <option value="Brazil">Brazil</option> 
+                                <option value="Peru">Perú</option> 
+                                <option value="Colombia">Colombia</option>
+                                <option value="Venezuela">Venezuela</option> 
+                                <option value="Ecuador">Ecuador</option> 
+                                <option value="Argentina">Argentina</option>
+                                <option value="Chile">Chile</option>
+                                <option value="Uruguay">Uruguay</option>
+                                <option value="Paraguay">Paraguay</option>
+                                <option value="Bolivia">Bolivia</option>
+                            </select>
+                            <button type="submit" class="btn btn-outline-primary">Predecir Resultado</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="row mb-5">
+            <div class="col-12 mb-3 text-center">
+                        <h5>{{ resultado_partido }}</h2>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+
+</body>
+</html>
